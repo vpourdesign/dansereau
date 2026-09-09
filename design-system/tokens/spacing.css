@@ -1,0 +1,20 @@
+:root{
+  --space-1:4px;
+  --space-2:8px;
+  --space-3:16px;
+  --space-4:24px;
+  --space-5:40px;
+  --space-6:64px;
+  --space-7:104px;
+  --space-8:168px;
+
+  --gutter:clamp(1.25rem,3vw,2.5rem); /* @kind spacing */
+  --section-pad:clamp(5rem,12vh,10.5rem); /* @kind spacing */
+  --container-max:1200px; /* @kind spacing */
+  --container-editorial-max:720px; /* @kind spacing */
+
+  --ease:cubic-bezier(0.16,1,0.3,1); /* @kind other */
+  --dur-hover:250ms; /* @kind other */
+  --dur-reveal:600ms; /* @kind other */
+  --dur-hero:900ms; /* @kind other */
+}

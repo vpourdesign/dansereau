@@ -1,0 +1,24 @@
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);font-size:var(--text-body);line-height:var(--lh-body);color:var(--texte-sur-clair);background:var(--surface-claire)}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+a:hover{color:var(--accent)}
+::selection{background:var(--champagne);color:var(--noir)}
+h1,h2,h3{font-family:var(--serif);font-weight:400}
+h1{font-size:var(--text-h1);line-height:var(--lh-h1);letter-spacing:var(--ls-h1)}
+h2{font-size:var(--text-h2);line-height:var(--lh-h2);letter-spacing:-0.01em}
+h3{font-size:var(--text-h3);line-height:var(--lh-h3)}
+p{max-width:var(--measure-editorial)}
+.mono{font-family:var(--mono);font-weight:500;text-transform:uppercase;letter-spacing:var(--ls-mono);font-size:var(--text-surtitre)}
+:focus-visible{outline:2px solid var(--champagne);outline-offset:2px}
+
+/* grain on dark backgrounds */
+.sombre{position:relative;background:var(--surface-sombre);color:var(--texte-sur-sombre)}
+.sombre::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:0.03;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.sombre>*{position:relative;z-index:1}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}

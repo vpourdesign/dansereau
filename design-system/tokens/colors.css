@@ -1,0 +1,36 @@
+:root{
+  /* base neutrals */
+  --noir:#0D0C0A;
+  --fusain:#171511;
+  --creme:#F4F0E8;
+  --ivoire:#FBF8F2;
+  --encre:#171511;
+  --craie:#F4F0E8;
+  --pierre:#6F675A;
+  --sable:#9A9080;
+  --filet-clair:#DDD5C6;
+  --filet-sombre:#2B2822;
+
+  /* accent */
+  --champagne:#C2A366;
+  --champagne-pale:#D6BC85;
+  --champagne-oklch:oklch(72% 0.07 85);
+
+  /* semantic aliases */
+  --surface-sombre:var(--noir);
+  --surface-sombre-elevee:var(--fusain);
+  --surface-claire:var(--creme);
+  --surface-claire-elevee:var(--ivoire);
+  --texte-sur-clair:var(--encre);
+  --texte-sur-sombre:var(--craie);
+  --texte-secondaire-sur-clair:var(--pierre);
+  --texte-secondaire-sur-sombre:var(--sable);
+  --accent:var(--champagne);
+  --accent-sur-sombre:var(--champagne-pale);
+  --bordure-sur-clair:var(--filet-clair);
+  --bordure-sur-sombre:var(--filet-sombre);
+
+  /* elevation (rare) */
+  --ombre-flottante:0 1px 2px oklch(20% 0.02 85 / 0.10), 0 12px 40px oklch(20% 0.02 85 / 0.18);
+  --voile-photo:linear-gradient(180deg, rgba(13,12,10,0) 0%, rgba(13,12,10,0.65) 100%); /* @kind other */
+}
