@@ -22,6 +22,8 @@ Tous chargés en direct depuis le CDN Pexels. À remplacer par les photos et la 
 | Carte 04 Réceptions privées | Photo 30151915 | https://www.pexels.com/photo/30151915/ | Leticia Alvares |
 | Carte 05 Galerie | Photo 28705621 | https://www.pexels.com/photo/28705621/ | Filipp Romanovski |
 | Carte 06 À propos | Photo 15671274 | https://www.pexels.com/photo/15671274/ | Luis Becerra Fotógrafo |
+| La maison, photo brigade | Photo 36904788 | https://www.pexels.com/photo/36904788/ | Amar Preciado |
+| La maison, photo table | Photo 17057034 | https://www.pexels.com/photo/17057034/ | Matheus Bertelli |
 | Bande citation | Photo 29703684 | https://www.pexels.com/photo/29703684/ | Valerie |
 | Split À propos | Photo 36430075 | https://www.pexels.com/photo/36430075/ | Willians Huerta |
 | Menu, vignette 1 | Photo 13375022 | https://www.pexels.com/photo/13375022/ | Lebele |

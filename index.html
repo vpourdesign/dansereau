@@ -116,21 +116,36 @@
 
   <div class="apres-hero">
 
-    <!-- ============ INTRO ÉDITORIALE (asymétrique, colonnes 2 à 8 + liste 9 à 12) ============ -->
+    <!-- ============ LA MAISON : composition éditoriale, deux photos superposées à gauche, titre + texte + carte des prestations à droite ============ -->
     <section class="intro" data-theme="clair" aria-labelledby="intro-titre">
       <div class="conteneur grille-12">
-        <div class="intro-texte" data-reveal>
-          <h2 id="intro-titre" class="titre-lignes">Cocktails, banquets et tables privées, orchestrés au détail près.</h2>
-          <p>Depuis Montréal, on conçoit des réceptions où le service s'efface derrière l'assiette. Menus de saison, brigade expérimentée, exécution précise. De la boîte à lunch corporative au mariage de deux cents couverts.</p>
+        <div class="intro-visuel">
+          <figure class="intro-photo intro-photo-a" data-reveal>
+            <img src="https://images.pexels.com/photos/36904788/pexels-photo-36904788.jpeg?auto=compress&cs=tinysrgb&w=900&h=1125&fit=crop"
+                 srcset="https://images.pexels.com/photos/36904788/pexels-photo-36904788.jpeg?auto=compress&cs=tinysrgb&w=600&h=750&fit=crop 600w, https://images.pexels.com/photos/36904788/pexels-photo-36904788.jpeg?auto=compress&cs=tinysrgb&w=900&h=1125&fit=crop 900w, https://images.pexels.com/photos/36904788/pexels-photo-36904788.jpeg?auto=compress&cs=tinysrgb&w=1300&h=1625&fit=crop 1300w"
+                 sizes="(max-width: 820px) 100vw, 36vw" width="900" height="1125" loading="lazy" decoding="async"
+                 alt="Brigade de cuisine dressant les assiettes avant le service">
+          </figure>
+          <figure class="intro-photo intro-photo-b" data-reveal>
+            <span class="intro-cadre"><img src="https://images.pexels.com/photos/17057034/pexels-photo-17057034.jpeg?auto=compress&cs=tinysrgb&w=800&h=534&fit=crop"
+                 srcset="https://images.pexels.com/photos/17057034/pexels-photo-17057034.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop 600w, https://images.pexels.com/photos/17057034/pexels-photo-17057034.jpeg?auto=compress&cs=tinysrgb&w=800&h=534&fit=crop 800w, https://images.pexels.com/photos/17057034/pexels-photo-17057034.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop 1200w"
+                 sizes="(max-width: 820px) 100vw, 26vw" width="800" height="534" loading="lazy" decoding="async"
+                 alt="Table dressée, verres et serviettes pliées, prête pour le service"></span>
+            <figcaption>Nos cuisines et nos tables, Montréal</figcaption>
+          </figure>
         </div>
-        <ol class="prestations" aria-label="Nos prestations" data-reveal-groupe>
-          <li><span>Cocktail dînatoire</span></li>
-          <li><span>Buffet stations</span></li>
-          <li><span>Réception privée</span></li>
-          <li><span>Boîtes à lunch et pauses-café</span></li>
-          <li><span>Mariages</span></li>
-          <li><span>Menus saisonniers</span></li>
-        </ol>
+        <div class="intro-texte">
+          <h2 id="intro-titre" class="titre-lignes">Cocktails, banquets et tables privées, orchestrés au détail près.</h2>
+          <p data-reveal>Depuis Montréal, on conçoit des réceptions où le service s'efface derrière l'assiette. Menus de saison, brigade expérimentée, exécution précise. De la boîte à lunch corporative au mariage de deux cents couverts.</p>
+          <ul class="carte-prestations" aria-label="Nos prestations" data-reveal-groupe>
+            <li>Cocktail dînatoire</li>
+            <li>Buffet stations</li>
+            <li>Réception privée</li>
+            <li>Boîtes à lunch et pauses-café</li>
+            <li>Mariages</li>
+            <li>Menus saisonniers</li>
+          </ul>
+        </div>
       </div>
     </section>
 

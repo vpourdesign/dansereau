@@ -139,13 +139,25 @@ h2{margin-bottom:1.5rem;text-wrap:balance}
 .apres-hero{position:relative;z-index:2;background:var(--creme)}
 
 /* =====================================================================
-   INTRO · éditorial asymétrique
+   LA MAISON · composition éditoriale : deux photos superposées à gauche
+   (N&B vers couleur), titre + texte + carte des prestations à droite
    ===================================================================== */
 .intro{background:var(--creme)}
-.intro-texte{grid-column:2/9}
-.intro-texte p{color:var(--pierre)}
-.prestations{grid-column:10/13;list-style:none;align-self:end;border-top:1px solid var(--filet-clair)}
-.prestations li{display:flex;gap:1.2rem;align-items:baseline;padding:.85rem 0;border-bottom:1px solid var(--filet-clair);font-size:.95rem}
+.intro .grille-12{align-items:start}
+.intro-visuel{grid-column:1/7;position:relative;padding-bottom:18%}
+.intro-photo{margin:0;background:var(--fusain)}
+.intro-photo img{display:block;width:100%;height:100%;object-fit:cover;filter:grayscale(1);transform:scale(1.001);transition:filter 900ms var(--ease),transform 900ms var(--ease)}
+.intro-photo.en-vue img,.intro-photo:hover img{filter:grayscale(0)}
+.intro-photo:hover img{transform:scale(1.03)}
+.intro-photo-a{width:76%;aspect-ratio:4/5;overflow:hidden}
+.intro-photo-b{position:absolute;right:0;bottom:0;width:54%;background:none}
+.intro-cadre{display:block;aspect-ratio:3/2;overflow:hidden;background:var(--fusain);box-shadow:0 1px 2px oklch(20% 0.02 85 / .10),0 12px 40px oklch(20% 0.02 85 / .18)}
+.intro-photo-b figcaption{margin-top:.9rem;font-size:.8rem;font-style:italic;color:var(--pierre)}
+.intro-texte{grid-column:8/13;padding-top:clamp(0rem,4vw,3rem)}
+.intro-texte h2{font-size:clamp(1.9rem,2.9vw,2.9rem)}
+.intro-texte p{color:var(--pierre);margin-bottom:2.6rem}
+.carte-prestations{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;column-gap:var(--gutter);border-top:1px solid var(--filet-clair)}
+.carte-prestations li{font-family:var(--serif);font-size:clamp(1.1rem,1.35vw,1.4rem);line-height:1.25;padding:1rem 0;border-bottom:1px solid var(--filet-clair)}
 
 /* =====================================================================
    LES 6 UNIVERS · crème vers noir carbone au scroll, cartes 4:5
@@ -238,8 +250,9 @@ h2{margin-bottom:1.5rem;text-wrap:balance}
    ===================================================================== */
 @media (max-width:1024px){
   .overlay-panneau{width:86vw}
-  .intro-texte{grid-column:1/9}
-  .prestations{grid-column:9/13}
+  .intro-visuel{grid-column:1/7}
+  .intro-texte{grid-column:7/13;padding-top:0}
+  .carte-prestations{grid-template-columns:1fr}
   .bande-citation{grid-column:1/12}
   .soumission-texte{grid-column:1/8}
   .soumission-infos{grid-column:9/13}
@@ -247,8 +260,11 @@ h2{margin-bottom:1.5rem;text-wrap:balance}
 @media (max-width:820px){
   :root{--entete-h:4rem;--overlay-marge:.5rem;--overlay-rayon:1rem}
   .grille-12{grid-template-columns:1fr;row-gap:var(--space-6)}
-  .intro-texte,.prestations,.split-figure,.split-texte,.soumission-texte,.soumission-infos,.bande-citation{grid-column:auto}
-  .prestations{align-self:start}
+  .intro-visuel,.intro-texte,.split-figure,.split-texte,.soumission-texte,.soumission-infos,.bande-citation{grid-column:auto}
+  .intro-visuel{padding-bottom:0}
+  .intro-photo-a{width:100%}
+  .intro-photo-b{display:none}
+  .intro-texte{padding-top:0}
   .entete{padding-block:.6rem}
   .entete-droite{gap:1.2rem}
   .entete .tel{display:none}
@@ -283,14 +299,14 @@ h2{margin-bottom:1.5rem;text-wrap:balance}
   .btn{padding:.95rem 1.5rem}
 }
 @media (hover:none){
-  .carte-figure img,.split-figure img,.vignette img{transition:filter 900ms var(--ease)}
+  .carte-figure img,.split-figure img,.vignette img,.intro-photo img{transition:filter 900ms var(--ease)}
 }
 
 /* =====================================================================
    MOUVEMENT RÉDUIT · tout est statique, images en couleur
    ===================================================================== */
 @media (prefers-reduced-motion:reduce){
-  .carte-figure img,.split-figure img,.vignette img,.bande-media img{filter:grayscale(0)!important;transform:none!important}
+  .carte-figure img,.split-figure img,.vignette img,.bande-media img,.intro-photo img{filter:grayscale(0)!important;transform:none!important}
   .hero-video{display:none}
   .hero-3d{display:none}
   .hero-scroll-ligne::after{animation:none}

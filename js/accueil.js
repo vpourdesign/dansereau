@@ -134,7 +134,7 @@
      Sans GSAP ou en mouvement réduit : images en couleur, on s'arrête là
      ------------------------------------------------------------------ */
   if (!ok || reduit) {
-    document.querySelectorAll('.carte-univers, .split-figure, .bande').forEach(function (el) { el.classList.add('en-vue'); });
+    document.querySelectorAll('.carte-univers, .split-figure, .bande, .intro-photo').forEach(function (el) { el.classList.add('en-vue'); });
     var flou = function () { entete.classList.toggle('est-flou', window.scrollY > 40); };
     window.addEventListener('scroll', flou, { passive: true });
     flou();
@@ -240,6 +240,11 @@
       gsap.fromTo('.bande-media img', { yPercent: -7 }, { yPercent: 7, ease: 'none', scrollTrigger: { trigger: bande, start: 'top bottom', end: 'bottom top', scrub: true } });
       ScrollTrigger.create({ trigger: bande, start: 'top 55%', once: true, onEnter: function () { bande.classList.add('en-vue'); } });
     }
+
+    /* la maison : photos en couleur à l'entrée */
+    gsap.utils.toArray('.intro-photo').forEach(function (ph) {
+      ScrollTrigger.create({ trigger: ph, start: 'top 65%', once: true, onEnter: function () { ph.classList.add('en-vue'); } });
+    });
 
     /* split : couleur à l'entrée */
     var fig = document.querySelector('.split-figure');
