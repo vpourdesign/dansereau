@@ -1,7 +1,7 @@
 :root{
   --serif:"DM Serif Display",Georgia,serif; /* @kind font */
-  --mono:"Spline Sans Mono","Courier New",monospace; /* @kind font */
-  --sans:"Archivo","Helvetica Neue",sans-serif; /* @kind font */
+  --mono:"Montserrat","Helvetica Neue",Arial,sans-serif; /* @kind font */
+  --sans:"Montserrat","Helvetica Neue",Arial,sans-serif; /* @kind font */
   --script:"Allura",cursive; /* @kind font */
 
   --text-h1:clamp(2.8rem,7vw,6rem);
@@ -17,7 +17,7 @@
   --lh-body:1.7; /* @kind other */
 
   --ls-h1:-0.015em; /* @kind other */
-  --ls-mono:0.16em; /* @kind other */
+  --ls-mono:0.14em; /* @kind other */
 
   --measure-editorial:65ch; /* @kind other */
 }

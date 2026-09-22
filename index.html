@@ -27,8 +27,8 @@
     <span class="traits" aria-hidden="true"><span></span><span></span></span><span>Menu</span>
   </button>
   <a class="logo" href="#contenu" aria-label="Dansereau Traiteur, retour à l'accueil">
-    <img class="logo-blanc" src="assets/logo-blanc.png" alt="" width="414" height="123" decoding="async">
-    <img class="logo-noir" src="assets/logo-noir.png" alt="" width="414" height="123" decoding="async">
+    <img class="logo-blanc" src="assets/logo-blanc.png" alt="" width="900" height="272" decoding="async">
+    <img class="logo-noir" src="assets/logo-noir.png" alt="" width="900" height="272" decoding="async">
   </a>
   <nav class="entete-droite mono" aria-label="Navigation rapide">
     <a class="lien-nav tel" href="tel:+15147356107">514 735-6107</a>
@@ -43,7 +43,7 @@
       <button class="fermer mono" id="fermer-menu" type="button">
         <span class="croix" aria-hidden="true"><span></span><span></span></span><span>Fermer</span>
       </button>
-      <img class="overlay-logo" src="assets/logo-noir.png" alt="Dansereau Traiteur" width="414" height="123" decoding="async">
+      <img class="overlay-logo" src="assets/logo-noir.png" alt="Dansereau Traiteur" width="900" height="272" decoding="async">
       <a class="lien-nav mono overlay-tel" href="tel:+15147356107">514 735-6107</a>
     </div>
     <div class="overlay-corps">
@@ -75,6 +75,11 @@
           <img src="https://images.pexels.com/photos/13375022/pexels-photo-13375022.jpeg?auto=compress&cs=tinysrgb&w=1000&h=700&fit=crop" alt="" loading="lazy" decoding="async" width="1000" height="700">
           <span class="vignette-nom">Évènements</span>
           <span class="vignette-label mono">Cocktail · Buffet stations · Réception privée</span>
+        </a>
+        <a class="vignette overlay-anim" href="#univers">
+          <img src="https://images.pexels.com/photos/18749086/pexels-photo-18749086.jpeg?auto=compress&cs=tinysrgb&w=1000&h=700&fit=crop" alt="" loading="lazy" decoding="async" width="1000" height="700">
+          <span class="vignette-nom">Corporatif</span>
+          <span class="vignette-label mono">Lunch d'affaires · Déjeuners · Pause-café</span>
         </a>
         <a class="vignette overlay-anim" href="#univers">
           <img src="https://images.pexels.com/photos/30235759/pexels-photo-30235759.jpeg?auto=compress&cs=tinysrgb&w=1000&h=700&fit=crop" alt="" loading="lazy" decoding="async" width="1000" height="700">
@@ -278,22 +283,93 @@
       </div>
     </section>
 
-    <!-- ============ SOUMISSION ============ -->
+    <!-- ============ SOUMISSION : texte + infos à gauche, formulaire à droite ============ -->
+    <!-- Prototype : l'envoi est simulé. En production WordPress, le formulaire passera par Gravity Forms (ou équivalent) vers info@. -->
     <section class="soumission sombre" id="soumission" data-theme="sombre" aria-labelledby="soumission-titre">
       <div class="conteneur grille-12">
         <div class="soumission-texte">
-          <h2 id="soumission-titre" class="titre-lignes">Parlez-nous de votre réception.</h2>
-          <p data-reveal>Date, nombre d'invités, lieu. On vous revient en moins de 48 heures avec une proposition.</p>
-          <div class="soumission-actions" data-reveal-groupe>
-            <a class="btn sur-sombre" href="#espace-client">Demander une soumission</a>
-            <a class="lien-fleche" href="tel:+15147356107">514 735-6107 <span class="fleche" aria-hidden="true">→</span></a>
-          </div>
+          <h2 id="soumission-titre" class="titre-lignes">Demandez votre soumission.</h2>
+          <p data-reveal>Quelques détails sur votre réception suffisent. On vous revient en moins de 48 heures avec une proposition.</p>
+          <dl class="soumission-infos" data-reveal-groupe>
+            <div><dt class="mono">Réponse</dt><dd>Sous 48 heures</dd></div>
+            <div><dt class="mono">Service</dt><dd>Grand Montréal et Laurentides</dd></div>
+            <div><dt class="mono">Réceptions</dt><dd>De 20 à 500 invités</dd></div>
+          </dl>
+          <a class="lien-fleche" href="tel:+15147356107" data-reveal>Ou appelez-nous : 514 735-6107 <span class="fleche" aria-hidden="true">→</span></a>
         </div>
-        <dl class="soumission-infos" data-reveal-groupe>
-          <div><dt class="mono">Réponse</dt><dd>Sous 48 heures</dd></div>
-          <div><dt class="mono">Service</dt><dd>Grand Montréal et Laurentides</dd></div>
-          <div><dt class="mono">Réceptions</dt><dd>De 20 à 500 invités</dd></div>
-        </dl>
+
+        <form class="formulaire" id="form-soumission" action="#" method="post" novalidate data-reveal>
+          <div class="champ">
+            <label for="f-nom">Prénom et nom</label>
+            <input id="f-nom" name="nom" type="text" autocomplete="name" required>
+            <span class="erreur">Indiquez votre nom.</span>
+          </div>
+          <div class="champ">
+            <label for="f-entreprise">Entreprise <span class="facultatif">(facultatif)</span></label>
+            <input id="f-entreprise" name="entreprise" type="text" autocomplete="organization">
+          </div>
+          <div class="champ">
+            <label for="f-courriel">Courriel</label>
+            <input id="f-courriel" name="courriel" type="email" autocomplete="email" required>
+            <span class="erreur">Indiquez un courriel valide.</span>
+          </div>
+          <div class="champ">
+            <label for="f-tel">Téléphone</label>
+            <input id="f-tel" name="telephone" type="tel" autocomplete="tel" inputmode="tel" required>
+            <span class="erreur">Indiquez un numéro où vous joindre.</span>
+          </div>
+          <div class="champ">
+            <label for="f-type">Type de réception</label>
+            <select id="f-type" name="type" required>
+              <option value="" selected disabled>Choisir</option>
+              <option>Évènement ou cocktail</option>
+              <option>Corporatif</option>
+              <option>Mariage</option>
+              <option>Réception privée</option>
+              <option>Menu saisonnier</option>
+              <option>Autre</option>
+            </select>
+            <span class="erreur">Choisissez un type de réception.</span>
+          </div>
+          <div class="champ">
+            <label for="f-date">Date prévue</label>
+            <input id="f-date" name="date" type="date" required>
+            <span class="erreur">Indiquez une date, même approximative.</span>
+          </div>
+          <div class="champ">
+            <label for="f-invites">Nombre d'invités</label>
+            <input id="f-invites" name="invites" type="number" min="1" step="1" inputmode="numeric" required>
+            <span class="erreur">Indiquez un nombre approximatif.</span>
+          </div>
+          <div class="champ">
+            <label for="f-lieu">Lieu ou ville <span class="facultatif">(facultatif)</span></label>
+            <input id="f-lieu" name="lieu" type="text" autocomplete="address-level2">
+          </div>
+          <fieldset class="champ plein formules">
+            <legend>Formule souhaitée <span class="facultatif">(facultatif)</span></legend>
+            <div class="puces">
+              <label class="puce"><input type="checkbox" name="formule" value="Cocktail dînatoire"><span>Cocktail dînatoire</span></label>
+              <label class="puce"><input type="checkbox" name="formule" value="Buffet stations"><span>Buffet stations</span></label>
+              <label class="puce"><input type="checkbox" name="formule" value="Repas servi"><span>Repas servi</span></label>
+              <label class="puce"><input type="checkbox" name="formule" value="Boîtes à lunch"><span>Boîtes à lunch</span></label>
+              <label class="puce"><input type="checkbox" name="formule" value="Pause-café"><span>Pause-café</span></label>
+              <label class="puce"><input type="checkbox" name="formule" value="À déterminer"><span>À déterminer</span></label>
+            </div>
+          </fieldset>
+          <div class="champ plein">
+            <label for="f-message">Votre projet <span class="facultatif">(facultatif)</span></label>
+            <textarea id="f-message" name="message" rows="4" data-lenis-prevent placeholder="Budget, allergies, ambiance recherchée, service de bar..."></textarea>
+          </div>
+          <div class="formulaire-pied">
+            <p class="formulaire-note">Vos renseignements servent uniquement à préparer votre soumission. <a href="#">Politique de confidentialité</a></p>
+            <button class="btn sur-sombre" type="submit">Envoyer la demande</button>
+          </div>
+        </form>
+
+        <div class="confirmation" id="confirmation" tabindex="-1" role="status" hidden>
+          <h3>Merci, votre demande est envoyée.</h3>
+          <p>On vous revient en moins de 48 heures avec une proposition. Pour une date rapprochée, appelez-nous au 514 735-6107.</p>
+        </div>
       </div>
     </section>
 
@@ -304,7 +380,7 @@
 <footer class="pied sombre" id="espace-client" data-theme="sombre">
   <div class="pied-haut conteneur-large">
     <div class="pied-col">
-      <img class="pied-logo" src="assets/logo-blanc.png" alt="Dansereau Traiteur" width="414" height="123" loading="lazy" decoding="async">
+      <img class="pied-logo" src="assets/logo-blanc.png" alt="Dansereau Traiteur" width="900" height="272" loading="lazy" decoding="async">
       <span class="mono pied-etiquette">Contact</span>
       <address class="pied-adresse">
         2255, rue Exemple<br>Montréal (Québec)

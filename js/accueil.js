@@ -131,6 +131,27 @@
   });
 
   /* ------------------------------------------------------------------
+     Formulaire de soumission : validation native, erreurs après le 1er essai,
+     envoi simulé (prototype). En WordPress : Gravity Forms prendra le relais.
+     ------------------------------------------------------------------ */
+  var form = document.getElementById('form-soumission');
+  var confirmation = document.getElementById('confirmation');
+  if (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      form.classList.add('a-valider');
+      if (!form.checkValidity()) {
+        var premier = form.querySelector(':invalid');
+        if (premier) premier.focus();
+        return;
+      }
+      form.hidden = true;
+      confirmation.hidden = false;
+      confirmation.focus();
+    });
+  }
+
+  /* ------------------------------------------------------------------
      Sans GSAP ou en mouvement réduit : images en couleur, on s'arrête là
      ------------------------------------------------------------------ */
   if (!ok || reduit) {
